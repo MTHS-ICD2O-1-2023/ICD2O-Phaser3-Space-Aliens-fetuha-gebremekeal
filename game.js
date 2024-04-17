@@ -3,7 +3,7 @@
 // Created by: Fetuha
 //
 // Created on: Apr 2024
-// This is the Phaser3 ga,e configuration file
+// This is the Phaser3 game configuration file
 
 /**
  * Start Phaser Game.
