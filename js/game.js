@@ -11,7 +11,8 @@ import TitleScene from "./titleScene.js"
 
 // create the new scenes
 const splashScene = new SplashScene()
-const titleScene = new TitleScene
+const titleScene = new TitleScene()
+
 /**
  * Start Phaser Game.
  */
