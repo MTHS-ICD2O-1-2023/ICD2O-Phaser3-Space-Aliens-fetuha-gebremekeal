@@ -8,7 +8,7 @@
 /**
  * This class is the Title Scene
  */
-class TitleScene extends Phaser.scene {
+class TitleScene extends Phaser.Scene {
   /**
  * This method is the constructor.
  */
