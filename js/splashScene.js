@@ -1,43 +1,46 @@
+
 /* global Phaser */
 
-// Created by: Fetuha
+// Copyright (c) 2020 Fetuha All rights reserved
 //
-// Created on: Apr 2024
-// This is the Splash Scene
+// Created by: Fetuha
+// Created on: April 2024
+// This is the Phaser3 configuration file
+
 
 /**
- * This class is the Splash Scene
+ * This class is the Splace Scene
  */
 class SplashScene extends Phaser.Scene {
   /**
- * This method is the constructor.
- */
+   * This method is the constructor
+   */
   constructor() {
     super({ key: "splashScene" })
   }
 
   /**
-   * Can be defined on your own scenes.
+   * Can be defined on your own Scenes.
    * This method is called by the Scene Manager when the scene starts,
    *  before preload() and create().
-   * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
+   * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start()
    */
   init(data) {
-    this.camera.main.setBackgroundColor("ffffff")
+    this.cameras.main.setBackgroundColor('#ffffff')
   }
 
   /**
-   * Can be defined on your own Scenes. 
+   * Can be defined on your own Scenes.
    * Use it to load assets.
    */
-  preload() { 
-    console.log("Splash Scene")
+  preload() {
+    console.log('Splash Scene')
   }
-  
+
   /**
    * Can be defined on your own Scenes.
    * Use it to create your game objects.
-   * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
+   * @param {object} data - Any data via ScenePlugin.add() or ScenePlugin.start()
    */
   create(data) {
     // pass
@@ -45,15 +48,13 @@ class SplashScene extends Phaser.Scene {
 
   /**
    * Should be overridden by your own Scenes.
-   * This method is called once per game step while the scene is running.
+   * this method is called once per game step while the scene is running.
    * @param {number} time - The current time.
    * @param {number} delta - The delta time in ms since the last frame.
    */
   update(time, delta) {
     this.scene.switch("titleScene")
-    // pass
   }
 }
 
 export default SplashScene
-  
