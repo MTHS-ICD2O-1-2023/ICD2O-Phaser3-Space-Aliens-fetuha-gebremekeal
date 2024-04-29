@@ -2,7 +2,7 @@
 
 // Copyright (c) 2020 Mr. Coxall All rights reserved
 //
-// Created by: Julianne Leblanc-Peltier
+// Created by: Fetuha
 // Created on: April 2024
 // This is the Phaser3 configuration file
 
