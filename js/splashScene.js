@@ -1,9 +1,8 @@
-
 /* global Phaser */
 
-// Copyright (c) 2020 Fetuha All rights reserved
+// Copyright (c) 2020 Mr. Coxall All rights reserved
 //
-// Created by: Fetuha
+// Created by: Julianne Leblanc-Peltier
 // Created on: April 2024
 // This is the Phaser3 configuration file
 
@@ -35,6 +34,8 @@ class SplashScene extends Phaser.Scene {
    */
   preload() {
     console.log('Splash Scene')
+    // image that loads as extends Phaser Scene
+    this.load.image('splashSceneBackground', './assets/splashSceneImage.png')
   }
 
   /**
@@ -43,6 +44,9 @@ class SplashScene extends Phaser.Scene {
    * @param {object} data - Any data via ScenePlugin.add() or ScenePlugin.start()
    */
   create(data) {
+    this.splashSceneBackgroundImage = this.add.sprite(0, 0, 'splashSceneBackground')
+    this.splashSceneBackgroundImage.x = 1920 / 2
+    this.splashSceneBackgroundImage.y = 1080 / 2
     // pass
   }
 
@@ -53,7 +57,9 @@ class SplashScene extends Phaser.Scene {
    * @param {number} delta - The delta time in ms since the last frame.
    */
   update(time, delta) {
-    this.scene.switch("titleScene")
+    if (time > 3000) {
+      this.scene.switch('titleScene')
+    }
   }
 }
 

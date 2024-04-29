@@ -2,20 +2,19 @@
 
 // Copyright (c) 2020 Mr. Coxall All rights reserved
 //
-// Created by: Fetuha
+// Created by: Julianne Leblanc-Peltier
 // Created on: April 2024
 // This is the Phaser3 configuration file
 
-
 /**
- * This class is the Splace Scene
+ * This class is the Title Scene.
  */
-class SplashScene extends Phaser.Scene {
-  /**
-   * This method is the constructor
+class TitleScene extends Phaser.Scene {
+  /** 
+   * This method is the constructor 
    */
   constructor() {
-    super({ key: "splashScene" })
+    super({ key: "titleScene" })
   }
 
   /**
@@ -33,13 +32,13 @@ class SplashScene extends Phaser.Scene {
    * Use it to load assets.
    */
   preload() {
-    console.log('Splash Scene')
+    console.log('Title Scene')
   }
 
   /**
    * Can be defined on your own Scenes.
    * Use it to create your game objects.
-   * @param {object} data - Any data via ScenePlugin.add() or ScenePlugin.start()
+   * @param {object} data - Any data passed via ScenePlugin.add() or Scene.Plugin.start()
    */
   create(data) {
     // pass
@@ -47,13 +46,13 @@ class SplashScene extends Phaser.Scene {
 
   /**
    * Should be overridden by your own Scenes.
-   * this method is called once per game step while the scene is running.
-   * @param {number} time - The current time.
+   * This method is called once per game step while the scene is running.
+   * @param {number} time - The current time
    * @param {number} delta - The delta time in ms since the last frame.
    */
   update(time, delta) {
-    this.scene.switch("titleScene")
+    // pass
   }
 }
 
-export default SplashScene
+export default TitleScene
