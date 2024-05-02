@@ -1,8 +1,8 @@
 /* global Phaser */
 
-// Copyright (c) 2024 Fetuha All rights reserved
+// Copyright (c) 2004 Fetuha All rights reserved
 //
-// Created by: Fetuha
+// Created by:Fetuha
 // Created on: Apr 2024
 // This is the Phaser3 game configuration file
 
