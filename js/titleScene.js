@@ -7,8 +7,8 @@
 // This is the Title Scene
 
 /**
- * This class is the Title Scene
- */
+* This class is the Title Scene
+*/
 class TitleScene extends Phaser.Scene {
   /**
    * This method is the constructor
@@ -68,7 +68,9 @@ class TitleScene extends Phaser.Scene {
    * @param {number} delta - The delta time in ms since the last frame
    */
   update(time, delta) {
-    // pass
+    if (time > 6000) {
+      this.scene.switch("menuScene")
+    }
   }
 }
 
