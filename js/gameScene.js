@@ -1,6 +1,6 @@
 /* global phaser */
 
-// Copyright (c) 2024 Fetuha All rights reserved
+// Copyright (c) 2024 fetuha All rights reserved
 //
 // Created by: Fetuha
 // Created on: Apr 2024
