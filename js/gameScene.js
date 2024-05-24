@@ -1,5 +1,3 @@
-/* global phaser */
-
 // Copyright (c) 2024 Fetuha All rights reserved
 //
 // Created by: Fetuha
@@ -7,8 +5,8 @@
 // This is the Game Scene
 
 /**
- * This class is the Game Scene
- */
+* This class is the Game Scene
+*/
 class GameScene extends Phaser.Scene {
   // create alien
   createAlien() {
@@ -26,9 +24,11 @@ class GameScene extends Phaser.Scene {
   constructor() {
     super({ key: "gameScene" })
 
-    this.background = null
     this.ship = null
     this.fireMissile = false
+    this.score = 0
+    this.scoreText = null
+    this.scoreTextStyle = { font: '65px Arial', fill: '#ffffff', align: 'center' }
   }
 
   /**
@@ -38,7 +38,7 @@ class GameScene extends Phaser.Scene {
    * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start()
    */
   init(data) {
-    this.cameras.main.setBackgroundColor("ffffff")
+    this.cameras.main.setBackgroundColor("#0x5f6e7a")
   }
 
   /**
@@ -55,6 +55,7 @@ class GameScene extends Phaser.Scene {
     this.load.image("alien", "./assets/alien.png")
     // sound
     this.load.audio("laser", "./assets/laser1.wav")
+    this.load.audio("explosion", "./assets/barrelExploding.wav")
   }
 
   /**
@@ -66,6 +67,8 @@ class GameScene extends Phaser.Scene {
     this.background = this.add.image(0, 0, "starBackground").setScale(2.0)
     this.background.setOrigin(0, 0)
 
+    this.scoreText = this.add.text(10, 10, 'Score: ' + this.score.toString(), this.scoreTextStyle)
+
     this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, "ship")
 
     // Create a group for the missles
@@ -74,6 +77,17 @@ class GameScene extends Phaser.Scene {
     // create a group for the aliens
     this.alienGroup = this.add.group()
     this.createAlien()
+
+    // collisions between missiles and aliens
+    this.physics.add.collider(this.missileGroup, this.alienGroup, function (missileCollide, alienCollide) {
+      alienCollide.destroy()
+      missileCollide.destroy()
+      this.sound.play('explosion')
+      this.score = this.score + 1
+      this.scoreText.setText('Score: ' + this.score.toString())
+      this.createAlien()
+      this.createAlien()
+    }.bind(this))
   }
 
   /**
